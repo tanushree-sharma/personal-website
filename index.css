@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Varela+Round&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding:0px;
+    margin:0px;
+    max-width:100vw;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+}
+#loading {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: white;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#spinner {
+    animation: rotate 0.56s infinite linear;
+    width:50px;
+    height:50px;
+    border:12px solid #154854;
+    border-bottom:12px solid #fff;
+    border-radius:50%;
+    margin:0;
+}
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+header {
+    width: 100vw;
+    padding:6vh 4vw;
+    position:fixed;
+    font-weight:bold;
+    transition:0.4s ease-in-out;
+    z-index:2;
+}
+#top_part_anchor{ /*custom anchor so header isn't cut off*/
+    display:none
+}
+.anchor{
+    display: block;
+    height: 115px; /*same height as header*/
+    margin-top: -115px; /*same height as header*/
+    visibility: hidden;
+  }
+
+header table {
+    width:100%;
+}
+.logo{
+    width:120px;
+    height:110px;
+}
+#navigation {
+    width:80%;
+}
+#magnify {
+    width:100vw;
+    height:100vh;
+    background:rgba(0, 0, 0, 0.92);
+    position:fixed;
+    z-index:4;
+    display:none;
+    flex-direction: column;
+    justify-content:center;
+}
+#magnify h1 {
+    position:absolute;
+    top:0;
+    right:0;
+    margin:20px 40px;
+    color:#fff;
+    transition:0.4s ease-in-out;
+}
+#magnify h1:hover{
+    color:#80a47a;
+    cursor:pointer;
+}
+#img_here {
+    width:90%;
+    height:90%;
+    background-size:contain !important;
+    background-repeat:no-repeat !important;
+    margin:0px auto;
+}
+
+#navigation {
+    text-align:right;
+}
+#navigation a {
+    color:inherit;
+    text-decoration:none;
+    padding:5px 10px;
+    border-bottom:2px solid transparent;
+    transition:0.4s ease-in-out;
+}
+#navigation a:hover{
+    border-bottom:2px solid #fff;
+}
+#top_part {
+    width:auto;
+    border:2vh solid rgb(255, 255, 255);
+    padding-top: 250px;
+    margin-left: 12%;
+    margin-right: 12%;
+}
+#top_part tr td{
+    width:33%;
+}
+
+#leftImage {
+    width:100%;
+    height:65vh;
+    background:url("./img/about_image.jpg");
+    background-size: cover; 
+    background-repeat:no-repeat;
+}
+#about {
+    width:84% !important;
+    height:65vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:left;
+    padding:0px 10%;
+}
+#about h1 {
+    font-size:65px;
+    word-wrap:break-word;
+    margin:0;
+    padding-left: 25px;
+
+}
+#about h2 {
+    font-size:45px;
+    word-wrap:break-word;
+    margin:0;
+    padding:0;
+    padding-left: 25px;
+    
+}
+#about h3 {
+    font-family: 'Varela Round', sans-serif;
+    font-size:15px;
+    word-wrap:break-word;
+    padding-left: 25px;
+}
+#about table {
+    width:70%;
+    margin-top:4vh;
+}
+#about table tr td {
+    width:20% !important;
+    text-align:left;
+}
+#til {
+    width:92vw;
+    padding:6vh 12vw;
+    font-weight:bold;
+}
+#til h1 {
+    padding:5px 0px;
+    border-bottom:4px solid #80a47a;
+    width:max-content;    
+
+}
+
+#table_til {
+    width:100%;
+    border:2vh solid rgb(255, 255, 255);
+}
+
+
+#projects {
+    width:92vw;
+    margin:6vh 12vw;
+    font-weight:bold;
+}
+
+
+#projects h1 {
+    border-bottom:4px solid #80a47a;
+    width:max-content;   
+}
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .cards-wrapper {
+    display: grid;
+    justify-content: left;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4rem;
+    margin: 0 auto;
+    /*width: 100vw; changed this from max-content*/
+    margin-right:12vw;
+    padding-top:30px;
+  }
+  
+  .card {
+    font-family: 'Montserrat', sans-serif;
+    --bg-filter-opacity: 0.5;
+    background-color: #154854;
+    height: 15em;
+    width: 15em;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 1em;
+    padding: 1em;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    justify-content: space-evenly;
+    box-shadow: 0 0 5em -1em black;
+    transition: all, 0.5s;
+    position: relative;
+    overflow: hidden;
+    border: 10px solid #ccc;
+    text-decoration: none;
+  }
+  
+  .card h1 {
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.2em;
+  }
+  
+  .card p {
+    font-size: 0.5em;
+    font-family: 'Varela Round', sans-serif;
+    margin-top: 0.5em;
+    line-height: 2em;
+  }
+  
+  .card .tags {
+    display: flex;
+  }
+  
+  .card .tags .tag {
+    font-size: 0.75em;
+    background: rgba(255,255,255,0.7);
+    border-radius: 0.3rem;
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+    line-height: 1.5em;
+    transition: all, 0.5s;
+  }
+  
+  .card:hover {
+    color: #80a47a;
+  }
+  
+  .info {
+    font-size: 1.2em;
+    display: flex;
+    padding: 1em 3em;
+    height: 3em;
+  }
+  f
+  .info img {
+    height: 3em;
+    margin-right: 0.5em;
+  }
+  
+  .info h1 {
+    font-size: 1em;
+    font-weight: normal;
+  }
+  
+  /* MEDIA QUERIES */
+  @media screen and (max-width: 1285px) {
+    .cards-wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+    .cards-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .info {
+      justify-content: center;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .cards-wrapper {
+      padding: 4rem 2rem;
+    }
+    .card {
+      max-width: calc(100vw - 4rem);
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .info {
+      display: block;
+      text-align: center;
+    }
+    .info h1 {
+      margin: 0;
+    }
+  }
+
+#recent-resume{
+    padding-top: 50px;
+    width:60%;
+    left: 50%;
+    margin-right:-50%;
+    position: relative;
+    transition:0.4s ease-in-out;
+    transform: translate(-50%, -0%)
+}
+
+#contact {
+    width:92vw;
+    padding:6vh 4vw;
+}
+#contact h1 {
+    padding:5px 0px;
+    border-bottom:4px solid  #80a47a;
+    width:max-content;
+}
+a{
+    color: #154854;
+}
+
+a:visited{
+    color: #154854;
+}
+
+#footer {
+    width:100%;
+    padding:10vh 0px;
+    text-align:center;
+    font-weight:bold;
+    height: 30px;
+}
+#footer a {
+    color:#154854;
+    text-decoration:none;
+}
+#links{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 15px;
+}
+::placeholder {
+    color:#000;
+}
+
+::-webkit-scrollbar {
+    width:5px;
+    height:5px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0); 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0,0.8); 
+}
+
+@media (max-width: 1000px){
+    #photos {
+    columns:1;
+    column-gap:0%;
+    }
+    #photos img {
+        margin:2% 0px;
+    }
+    #photos img:hover {
+        transform: scale(1);
+        cursor: pointer;
+    }
+    #leftImage {
+        display:none;
+    }
+    #top_part {
+        border:0px;
+    }
+    #top_part tr td{
+        width:100%;
+        text-align:center;
+    }
+    #about {
+        width:92% !important;
+        height:75vh;
+        padding-top:10vh !important;
+        text-align:center;
+        padding:0px 4%;
+    }
+    #about table {
+        width:100%;
+        margin-top:6vh;
+    }
+    #about table tr td {
+        text-align:center;
+    }
+    #contact table tr td {
+        width:100%;
+        display:block;
+    }
+    #inner_table tr td{
+        padding:10px 0px !important;
+    }
+    #contact form input {
+        width:90%;
+    }
+    #contact form textarea {
+        width:90%;
+    }
+    .social {
+        color:#154854;
+        font-size:23px;
+        padding:12px 17px;
+        border-radius:50%;
+        background:transparent;
+        transition:0.4s ease-in-out;
+        font-weight:bold;
+        margin:0px 8px;
+    }
+    .social:hover { 
+        cursor: pointer;
+        color:#fff;
+        background:#154854;
+        box-shadow:0px 10px 30px #154854;
+    }
+    #work h1 {
+        width:19%;
+    }
+    #bio h1 {
+        width:25%;
+    }
+    #contact h1 {
+        width:33%;
+    }
+    header {
+        width:96vw;
+        background:#fff;
+        padding:4vh 2vw;
+        position:absolute;
+    }
+    #header table tr td {
+        width:100%;
+        display:block;
+        text-align:center;
+        padding:15px 0px;
+    }
+    #navigation a {
+        color:#000;
+    }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tanushree Sharma</title>
+    <link rel="icon" type="image/ico" href="img/logo-on-light.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+
+    <script> 
+        $(function(){
+          $("#header").load("header.html"); 
+          $("#footer").load("footer.html"); 
+        });
+    </script> 
+
+</head>
+<body>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <div id="magnify">
+        <h1 onclick="closemagnify()"><i class="fas fa-times"></i></h1>
+        <div id="img_here"></div>
+    </div>
+
+    <header id="header" class="animated slideInDown" style="animation-delay:1.8s;">
+        <div id="header"></div>
+    </header>
+    <span class="anchor" id="top_part_anchor"></span>
+    <table id="top_part">
+        <tr>
+            <td id="leftImage" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
+            <td id="about" class="animated slideInRight" style="animation-delay:2s;">
+                <h1>hi,</h1>
+                <h2>my name is Tanushree.</h2>
+                <h3>I'm a 4th year Engineering student at the University of Waterloo. Blah blah add intro here.</h3>
+            </td>
+        </tr>
+    </table>
+    <span class="anchor" id="til-anchor"></span>
+    <div id="til">
+        <h1>work experience</h1>
+        <table id="table_til">
+            <tr>
+                <td id="blog 1" > filler</td>
+            </tr>
+            <tr>
+                <td id="blog 2" > filler</td>
+            </tr>
+            <tr>
+                <td id="blog 3" > filler</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <span class="anchor" id="projects-anchor"></span>
+    <div id = projects>
+        <h1>projects</h1>
+        <section class="cards-wrapper">
+            <a class="card">
+              <div>
+                <h2>Political Tweet Analysis</h2>
+                <p>TThis project quantifies the effects of new political policies, campaign platforms, and general sentiment towards the political atmosphere in the United States by analyzing the sentiment of recent politically charged tweets.</p>
+                <div class="tags">
+                  <div class="tag">Python</div>
+                </div>
+              </div>
+            </a>
+            <a class="card">
+              <div>
+                <h2>Basic types of HTML tags</h2>
+                <p>Learn about some of the most common HTML tags…</p>
+                <div class="tags">
+                  <div class="tag">HTML</div>
+                </div>
+              </div>
+            </a>
+            <a class="card">
+              <div>
+                <h2>Links, images and about file paths</h2>
+                <p>Learn how to use links and images along with file paths…</p>
+                <div class="tags">
+                  <div class="tag">HTML</div>
+                </div>
+              </div>
+            </a>
+        </section>
+    </div>
+    
+   <div id="footer"></div>
+
+    <script src="index.js" type="text/javascript"></script>
+</body>
+</html>
